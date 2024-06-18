@@ -1,5 +1,5 @@
 import { Uuid } from "@lambda-group/scylladb";
-import { DataSource } from "../..";
+import { DataSource } from "../data-source";
 import { BaseEntity } from "../entity/base";
 
 export class Repository<T> {
