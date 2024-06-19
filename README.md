@@ -57,11 +57,9 @@ These instructions will get you a copy of the project up and running 🏃 on you
     ```typescript
     @Entity("scylla_tables")
     class ScyllaTables {
-    @Column({
-      name: "name",
-      type: ColumnType.TEXT
-    })
-    name: string;
+      @Column({ name: "name", type: ColumnType.TEXT })
+      name: string;
+    }
     ```
 
 4. **Access the repository:**
