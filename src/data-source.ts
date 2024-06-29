@@ -28,6 +28,7 @@ export class DataSource {
   }
 
   [Symbol.dispose]() {
+    // NOTE: perhaps we should implement a proper cleanup here, session.close();
     if (this.session) {
       this.session = null;
     }
