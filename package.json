@@ -22,7 +22,8 @@
     "splitting": true,
     "sourcemap": true,
     "clean": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "dts": true
   },
   "scripts": {
     "build": "tsup",
