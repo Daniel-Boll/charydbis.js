@@ -1,23 +1,17 @@
 {
-  "$schema": "http://json.schemastore.org/tsconfig",
-  "include": [
-    "src/index.ts",
-    "examples/**/*.ts"
-  ],
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "declaration": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "strict": true,
-    "esModuleInterop": true,
-    "strictPropertyInitialization": false,
-    "outDir": "dist"
-  },
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+	"$schema": "http://json.schemastore.org/tsconfig",
+	"include": ["src/index.ts", "examples/**/*.ts"],
+	"compilerOptions": {
+		"target": "ES2015",
+		"module": "ES2020",
+		"strict": true,
+		"declaration": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"esModuleInterop": true,
+		"strictPropertyInitialization": false,
+		"outDir": "dist",
+		"moduleResolution": "Bundler"
+	},
+	"exclude": ["node_modules", "dist"]
 }

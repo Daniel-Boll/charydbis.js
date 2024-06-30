@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import type { BaseEntity, BaseEntityConstructor } from "../entity";
 
 export enum ColumnType {
@@ -22,6 +23,9 @@ export function Column(options?: ColumnOptions | string) {
 		const constructor_ = target.constructor as BaseEntityConstructor;
 
 		if (!constructor_.columns) constructor_.columns = [];
+
+		// This column type is:
+		const type = Reflect.getMetadata("design:type", target, key);
 
 		let columnName = key;
 		let columnType = ColumnType.TEXT;

@@ -52,8 +52,5 @@ if [ ! -f "$EXAMPLE_PATH" ]; then
 fi
 
 { # TODO: Make each example have a unique keyspace, so we can query the keyspace existance and run the migration if not
-
-	# Run the example using pnpm tsx
-	pnpm tsx "${EXAMPLE_PATH}"
-
+	node --import @swc-node/register/esm-register "${EXAMPLE_PATH}"
 }
