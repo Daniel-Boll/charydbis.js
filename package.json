@@ -20,11 +20,11 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
     "@types/node": "^20.14.9",
     "tsx": "^4.15.6"
   },
   "dependencies": {
-    "@lambda-group/scylladb": "^0.0.19",
     "typescript": "^5.4.5"
   }
 }

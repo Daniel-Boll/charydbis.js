@@ -1,3 +1,2 @@
-export * from "./column"
-export * from "./entity"
-export * from "./primary-generated-column"
+export * from "./column";
+export * from "./entity";
