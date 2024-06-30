@@ -1,4 +1,5 @@
 import { BaseEntity } from "../entity/base";
+import { snakeCaseTransform } from "../utils/snake-case-transform";
 
 interface TableOptions {
 	compaction?: CompactionType;
@@ -12,9 +13,9 @@ enum CompactionType {
 	IncrementalCompactionStrategy = 3,
 }
 
-export function Entity(tableName: string, options?: TableOptions) {
+export function Entity(tableName?: string, options?: TableOptions) {
 	return (entity: Function) => {
-		entity.prototype.tableName = tableName;
+		entity.prototype.tableName = tableName ?? snakeCaseTransform(entity.name);
 		entity.prototype.__proto__ = BaseEntity.prototype;
 
 		if (options?.compaction) entity.prototype.compaction = options;

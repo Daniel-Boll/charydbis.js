@@ -2,7 +2,7 @@ import { Uuid } from "@lambda-group/scylladb";
 import type { DataSource } from "../data-source";
 import { ColumnType, type ColumnDefinition } from "../decorators";
 import type { BaseEntityConstructor } from "../entity";
-import { Logger } from "../logger";
+import { Logger } from "../utils/logger";
 
 export class Repository<T> {
   private dataSource: DataSource;

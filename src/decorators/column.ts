@@ -1,5 +1,6 @@
 import "reflect-metadata";
 import type { BaseEntity, BaseEntityConstructor } from "../entity";
+import { snakeCaseTransform } from "../utils/snake-case-transform";
 
 export enum ColumnType {
 	TEXT = "TEXT",
@@ -8,6 +9,22 @@ export enum ColumnType {
 	TIMESTAMP = "TIMESTAMP",
 	DATE = "DATE",
 	UUID = "UUID",
+}
+
+const getColumnType = (type?: string): ColumnType => {
+	const lowerType = type?.toLowerCase();
+	switch (lowerType) {
+		case "string":
+			return ColumnType.TEXT;
+		case "number":
+			return ColumnType.FLOAT;
+		case "date":
+			return ColumnType.DATE;
+		case "uuid":
+			return ColumnType.UUID;
+		default:
+			return ColumnType.TEXT;
+	}
 }
 
 export interface ColumnOptions {
@@ -24,11 +41,11 @@ export function Column(options?: ColumnOptions | string) {
 
 		if (!constructor_.columns) constructor_.columns = [];
 
-		// This column type is:
-		const type = Reflect.getMetadata("design:type", target, key);
+		const propType = Reflect.getMetadata("design:type", target, key);
+		const propColumnType = getColumnType(propType.name)
 
-		let columnName = key;
-		let columnType = ColumnType.TEXT;
+		let columnName = snakeCaseTransform(key);
+		let columnType = propColumnType;
 		let isPartitionKey = false;
 		let isClusteringKey = false;
 		let clusteringKeySequence = 0;
@@ -36,7 +53,7 @@ export function Column(options?: ColumnOptions | string) {
 		if (typeof options === "string") columnName = options;
 		else if (typeof options === "object") {
 			columnName = options.name || key;
-			columnType = options.type || ColumnType.TEXT;
+			columnType = options.type || propColumnType;
 			if (options.partitionKey) isPartitionKey = options.partitionKey;
 			if (options.clusteringKey) {
 				isClusteringKey = options.clusteringKey;
