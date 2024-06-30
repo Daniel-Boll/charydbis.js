@@ -25,6 +25,7 @@
     "tsx": "^4.15.6"
   },
   "dependencies": {
+    "@lambda-group/scylladb": "^0.0.26",
     "typescript": "^5.4.5"
   }
 }
