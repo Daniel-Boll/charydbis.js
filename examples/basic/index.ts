@@ -1,10 +1,5 @@
 import { Uuid } from "@lambda-group/scylladb";
-import {
-	BaseEntity,
-	Column,
-	DataSource,
-	Entity
-} from "../../src/index";
+import { BaseEntity, Column, DataSource, Entity } from "../../src/index";
 
 @Entity("users")
 class User extends BaseEntity {

@@ -25,7 +25,7 @@ const getColumnType = (type?: string): ColumnType => {
 		default:
 			return ColumnType.TEXT;
 	}
-}
+};
 
 export interface ColumnOptions {
 	name?: string;
@@ -42,7 +42,7 @@ export function Column(options?: ColumnOptions | string) {
 		if (!constructor_.columns) constructor_.columns = [];
 
 		const propType = Reflect.getMetadata("design:type", target, key);
-		const propColumnType = getColumnType(propType.name)
+		const propColumnType = getColumnType(propType.name);
 
 		let columnName = snakeCaseTransform(key);
 		let columnType = propColumnType;

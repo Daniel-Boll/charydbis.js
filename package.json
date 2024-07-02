@@ -1,47 +1,41 @@
 {
-  "name": "@lambda-group/charydbis",
-  "repository": "https://github.com/Daniel-Boll/charydbis",
-  "version": "0.0.4",
-  "description": "🚀 NodeJS ScyllaDB ORM. 🧪🔧",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
-  "keywords": [
-    "ScyllaDB",
-    "ORM"
-  ],
-  "author": {
-    "name": "Daniel Boll",
-    "email": "danielboll.dev@proton.me",
-    "url": "https://daniel-boll.me"
-  },
-  "tsup": {
-    "entry": [
-      "src/**/*.ts",
-      "examples/**/*.ts"
-    ],
-    "splitting": true,
-    "sourcemap": true,
-    "clean": true,
-    "outDir": "dist",
-    "dts": true
-  },
-  "scripts": {
-    "build": "tsup",
-    "example": "./scripts/run-example.sh"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@biomejs/biome": "^1.8.3",
-    "@swc-node/register": "^1.10.0",
-    "@tsconfig/node16": "^16.1.3",
-    "@types/node": "^20.14.9",
-    "ts-node": "^10.9.2",
-    "tsup": "^8.1.0",
-    "tsx": "^4.15.6"
-  },
-  "dependencies": {
-    "@lambda-group/scylladb": "^0.0.27",
-    "reflect-metadata": "^0.2.2",
-    "typescript": "^5.4.5"
-  }
+	"name": "@lambda-group/charydbis",
+	"repository": "https://github.com/Daniel-Boll/charydbis",
+	"version": "0.0.4",
+	"description": "🚀 NodeJS ScyllaDB ORM. 🧪🔧",
+	"main": "src/index.js",
+	"types": "src/index.d.ts",
+	"keywords": ["ScyllaDB", "ORM"],
+	"author": {
+		"name": "Daniel Boll",
+		"email": "danielboll.dev@proton.me",
+		"url": "https://daniel-boll.me"
+	},
+	"tsup": {
+		"entry": ["src/**/*.ts", "examples/**/*.ts"],
+		"splitting": true,
+		"sourcemap": true,
+		"clean": true,
+		"outDir": "dist",
+		"dts": true
+	},
+	"scripts": {
+		"build": "tsup",
+		"example": "./scripts/run-example.sh"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@biomejs/biome": "^1.8.3",
+		"@swc-node/register": "^1.10.0",
+		"@tsconfig/node16": "^16.1.3",
+		"@types/node": "^20.14.9",
+		"ts-node": "^10.9.2",
+		"tsup": "^8.1.0",
+		"tsx": "^4.15.6"
+	},
+	"dependencies": {
+		"@lambda-group/scylladb": "^0.0.27",
+		"reflect-metadata": "^0.2.2",
+		"typescript": "^5.4.5"
+	}
 }
