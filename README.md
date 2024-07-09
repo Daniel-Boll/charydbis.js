@@ -40,37 +40,37 @@ These instructions will get you a copy of the project up and running 🏃 on you
 
    Here's a simple script that creates a data source:
 
-    ```typescript
-    import { DataSource } from "@lambda-group/charydbis";
-    
-    using scyllaDataSource = await new DataSource({
+   ```typescript
+   import { DataSource } from "@lambda-group/charydbis";
+
+   using scyllaDataSource = await new DataSource({
      nodes: ["localhost:9042"],
-    }).initialize("system_schema");
-    ```
+   }).initialize("system_schema");
+   ```
 
    Here we leverage the `using` keyword so in the end of the scope on [Symbol.dispose] we automatically close the connection so you don't have to bother.
 
-3. **Create an entity:**
+3. **Create a model:**
 
-    Now we can create a structure that will represent out data.
-      
-    ```typescript
-    @Entity("scylla_tables")
-    class ScyllaTables {
-      @Column({ name: "name", type: ColumnType.TEXT })
-      name: string;
-    }
-    ```
+   Now we can create a structure that will represent out data.
+
+   ```typescript
+   @Model("scylla_tables")
+   class ScyllaTables {
+     @Column()
+     name: string;
+   }
+   ```
 
 4. **Access the repository:**
 
-    You can now get a default repository from the entity.
-    
-    ```ts
-    const scyllaTablesRepository = scyllaDataSource.getRepository(ScyllaTables);
-    
-    const tables: Array<ScyllaTables> = await scyllaTablesRepository.find();
-    ```
+   You can now get a default repository from the model.
+
+   ```ts
+   const scyllaTablesRepository = scyllaDataSource.getRepository(ScyllaTables);
+
+   const tables: Array<ScyllaTables> = await scyllaTablesRepository.find();
+   ```
 
 ---
 

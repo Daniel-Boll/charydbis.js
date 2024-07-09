@@ -1,3 +1,3 @@
 export * from "./column";
-export * from "./entity";
+export * from "./model";
 export * from "./typings";

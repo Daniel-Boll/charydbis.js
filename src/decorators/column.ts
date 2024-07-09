@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import type { BaseEntity, BaseEntityConstructor } from "../entity";
+import type { BaseModel, BaseModelConstructor } from "../model";
 import { snakeCaseTransform } from "../utils/snake-case-transform";
 
 export enum ColumnType {
@@ -36,8 +36,8 @@ export interface ColumnOptions {
 }
 
 export function Column(options?: ColumnOptions | string) {
-  return (target: BaseEntity, key: string) => {
-    const constructor_ = target.constructor as BaseEntityConstructor;
+  return (target: BaseModel, key: string) => {
+    const constructor_ = target.constructor as BaseModelConstructor;
 
     if (!constructor_.columns) constructor_.columns = [];
 
