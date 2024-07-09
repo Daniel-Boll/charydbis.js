@@ -1,4 +1,4 @@
-import type { ClusterConfig, ScyllaSession } from "@lambda-group/scylladb";
+import type { ClusterConfig, ConnectionOptions, ScyllaSession } from "@lambda-group/scylladb";
 import { Cluster } from "@lambda-group/scylladb";
 import type { BaseEntity } from "./entity/base";
 import { Repository } from "./repository/base";
@@ -11,8 +11,8 @@ export class DataSource {
 		this.cluster = new Cluster(this.options);
 	}
 
-	async initialize(keyspace?: string): Promise<DataSource> {
-		this.session = await this.cluster.connect(keyspace);
+	async initialize(keyspaceOrOptions?: string | ConnectionOptions): Promise<DataSource> {
+		this.session = await this.cluster.connect(keyspaceOrOptions);
 
 		return this;
 	}
