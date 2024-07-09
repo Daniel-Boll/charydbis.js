@@ -97,8 +97,8 @@ This type definition ensures that queries adhere to ScyllaDB's rules. You can se
 If we add a new clustering key, the order must follow ScyllaDB's rules:
 
 ```ts
-@Entity("users")
-class User extends BaseEntity {
+@Model("users")
+class User extends BaseModel {
   @Column({ partitionKey: true })
   id: Uuid;
 
