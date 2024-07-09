@@ -50,7 +50,18 @@ These instructions will get you a copy of the project up and running 🏃 on you
 
    Here we leverage the `using` keyword so in the end of the scope on [Symbol.dispose] we automatically close the connection so you don't have to bother.
 
-3. **Create an entity:**
+4. **Using a Username and Password:**
+
+    If your data source uses authentication (username and or password) you can add the following to your DataSource constructor:
+
+    ```typescript
+      auth: {
+        username: "<username>",
+        password: "<password>"
+      }
+    ```
+
+5. **Create an entity:**
 
     Now we can create a structure that will represent out data.
       
@@ -62,7 +73,7 @@ These instructions will get you a copy of the project up and running 🏃 on you
     }
     ```
 
-4. **Access the repository:**
+6. **Access the repository:**
 
     You can now get a default repository from the entity.
     
