@@ -5,5 +5,6 @@ CREATE KEYSPACE examples_basic WITH REPLICATION = { 'class' : 'SimpleStrategy', 
 CREATE TABLE examples_basic.users (
   id uuid,
   name text,
-  PRIMARY KEY (id)
+  address text,
+  PRIMARY KEY (id, name)
 );
