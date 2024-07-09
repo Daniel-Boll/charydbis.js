@@ -1,18 +1,24 @@
 {
 	"name": "@lambda-group/charydbis",
 	"repository": "https://github.com/Daniel-Boll/charydbis",
-	"version": "0.0.4",
+	"version": "0.1.0",
 	"description": "🚀 NodeJS ScyllaDB ORM. 🧪🔧",
 	"main": "src/index.js",
 	"types": "src/index.d.ts",
-	"keywords": ["ScyllaDB", "ORM"],
+	"keywords": [
+		"ScyllaDB",
+		"ORM"
+	],
 	"author": {
 		"name": "Daniel Boll",
 		"email": "danielboll.dev@proton.me",
 		"url": "https://daniel-boll.me"
 	},
 	"tsup": {
-		"entry": ["src/**/*.ts", "examples/**/*.ts"],
+		"entry": [
+			"src/**/*.ts",
+			"examples/**/*.ts"
+		],
 		"splitting": true,
 		"sourcemap": true,
 		"clean": true,
