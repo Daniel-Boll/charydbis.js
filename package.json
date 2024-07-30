@@ -1,7 +1,7 @@
 {
 	"name": "@lambda-group/charydbis",
 	"repository": "https://github.com/Daniel-Boll/charydbis",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"description": "🚀 NodeJS ScyllaDB ORM. 🧪🔧",
 	"main": "src/index.js",
 	"types": "src/index.d.ts",
