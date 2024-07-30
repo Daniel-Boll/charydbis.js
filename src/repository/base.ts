@@ -56,7 +56,7 @@ export class Repository<T extends { [PrimaryKeyProp]?: AnyArray }> {
     const query = `SELECT ${columnNames} FROM ${this.tableName}`;
     this.logger.log(`Executing query: ${query}`);
 
-    return (await session.execute(query, [])).map((row: unknown) => {
+    return (await session.execute(query)).map((row: unknown) => {
       const model = new this.modelClass();
       for (const col of this.columns) {
         // @ts-ignore: Object has no index signature
